@@ -8,8 +8,8 @@ import (
 )
 
 var PluginName = "gamerstatus"
-var Version = ""
-var Builddate = ""
+var PluginVersion = ""
+var PluginBuilddate = ""
 
 func Start(discord *discordgo.Session) {
 	go setIdleStatus(discord)
