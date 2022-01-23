@@ -1,4 +1,4 @@
-package gamerstatus
+package main
 
 import (
 	"math/rand"
