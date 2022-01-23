@@ -7,6 +7,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+var PluginName = "gamerstatus"
 var Version = ""
 var Builddate = ""
 
