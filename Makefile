@@ -1,7 +1,7 @@
 VERSION=`git describe --tags`
 BUILDDATE=`date +%FT%T%z`
 BUILDMODE=-buildmode=plugin
-LDFLAGS=-ldflags="-X 'github.com/toksikk/gamerstatus.Version=${VERSION}' -X 'github.com/toksikk/gamerstatus.Builddate=${BUILDDATE}'"
+LDFLAGS=-ldflags="-X 'github.com/toksikk/main.Version=${VERSION}' -X 'github.com/toksikk/main.Builddate=${BUILDDATE}'"
 
 PLATFORMS := linux/amd64 linux/arm64 linux/386 linux/arm darwin/amd64
 
@@ -15,7 +15,7 @@ help:  ## 🤔 Show help messages
 
 build: ## 🚧 Build for local arch
 	mkdir -p ./lib
-	go build -o ./lib/gamerstatus.so ${LDFLAGS} ./*.go
+	go build ${BUILDMODE} -o ./lib/gamerstatus.so ${LDFLAGS} ./*.go
 
 clean: ## 🧹 Remove previously build binaries
 	rm -rf ./lib
@@ -25,4 +25,4 @@ pre-release:
 
 release: pre-release $(PLATFORMS) ## 📦 Build for GitHub release
 $(PLATFORMS):
-	GOOS=$(os) GOARCH=$(arch) go build -o ./lib/release/gamerstatus-$(os)-$(arch).so ./*.go
+	GOOS=$(os) GOARCH=$(arch) go build ${BUILDMODE} -o ./lib/release/gamerstatus-$(os)-$(arch).so ./*.go
