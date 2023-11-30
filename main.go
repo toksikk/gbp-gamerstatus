@@ -5,7 +5,7 @@ import (
 	plugin "github.com/toksikk/gbp-gamerstatus/plugin"
 )
 
-var PluginName = "gamerstatus"
+var PluginName = plugin.PluginName
 var PluginVersion = ""
 var PluginBuilddate = ""
 

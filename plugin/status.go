@@ -8,6 +8,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+var PluginName = "gamerstatus"
+
 func Start(discord *discordgo.Session) {
 	go setIdleStatus(discord)
 }
