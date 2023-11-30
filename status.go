@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log/slog"
 	"math/rand"
 	"time"
 
