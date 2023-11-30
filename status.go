@@ -69,6 +69,5 @@ func setIdleStatus(discord *discordgo.Session) {
 }
 
 func randomRange(min, max int) int {
-	rand.Seed(time.Now().UTC().UnixNano())
 	return rand.Intn(max-min) + min
 }
