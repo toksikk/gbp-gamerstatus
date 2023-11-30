@@ -55,8 +55,14 @@ func setIdleStatus(discord *discordgo.Session) {
 		"R-Type",
 	}
 	for {
-		discord.UpdateStreamingStatus(1, "", "")
-		discord.UpdateGameStatus(0, games[randomRange(0, len(games))])
+		err := discord.UpdateStreamingStatus(1, "", "")
+		if err != nil {
+			slog.Error("Could not set streaming status", "error", err)
+		}
+		err = discord.UpdateGameStatus(0, games[randomRange(0, len(games))])
+		if err != nil {
+			slog.Error("Could not set game status", "error", err)
+		}
 		time.Sleep(time.Duration(randomRange(5, 15)) * time.Minute)
 	}
 }
