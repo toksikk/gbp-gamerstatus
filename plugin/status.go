@@ -1,4 +1,4 @@
-package main
+package gbp_gamerstatus
 
 import (
 	"log/slog"
@@ -7,10 +7,6 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 )
-
-var PluginName = "gamerstatus"
-var PluginVersion = ""
-var PluginBuilddate = ""
 
 func Start(discord *discordgo.Session) {
 	go setIdleStatus(discord)
