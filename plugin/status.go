@@ -13,11 +13,11 @@ var PluginName = "gamerstatus"
 
 // Start the plugin
 func Start(discord *discordgo.Session) {
-	time.Sleep(5 * time.Minute)
 	go setIdleStatus(discord)
 }
 
 func setIdleStatus(discord *discordgo.Session) {
+	time.Sleep(5 * time.Minute)
 	games := []string{
 		"Terranigma",
 		"Secret of Mana",
